@@ -57,4 +57,14 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VEND
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
+# Fix proprietary blobs
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
+
+# nvram_mfg.txt
+sed -i 's|ccode=ALL|ccode=00|g' $BLOB_ROOT/etc/wifi/nvram_mfg.txt
+sed -i 's|regrev=0|regrev=6|g' $BLOB_ROOT/etc/wifi/nvram_mfg.txt
+
+# nvram_net.txt
+sed -i 's|ccode=GB|ccode=00|g' $BLOB_ROOT/etc/wifi/nvram_net.txt
+
 "${MY_DIR}/setup-makefiles.sh"
