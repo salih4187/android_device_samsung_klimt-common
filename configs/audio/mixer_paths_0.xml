@@ -22,7 +22,6 @@
     <ctl name="HPOUT1 Digital Switch" value="1" />
     <ctl name="HPOUT2L Input 1" value="AIF1RX1" />
     <ctl name="HPOUT2R Input 1" value="AIF1RX2" />
-    <ctl name="OUT2 Digital Switch" value="1" />
     <ctl name="ASRC2L Input" value="AIF2RX1" />
     <ctl name="ASRC2R Input" value="AIF2RX2" />
     <ctl name="EPOUT Input 3" value="None" />
@@ -136,8 +135,11 @@
     </path>
 
     <!-- Verbs -->
-    <path name="verb-normal">
+    <path name="AIF2Master">
         <ctl name="AIF2 Mode" value="Master" />
+    </path>
+
+    <path name="verb-normal">
         <ctl name="EPOUT DRE Switch" value="1" />
         <ctl name="HPOUT1 DRE Switch" value="1" />
         <ctl name="EPOUT Input 3" value="None" />
@@ -219,6 +221,7 @@
 	<!-- Output -->
     <path name="earpiece">
         <path name="verb-normal" />
+        <path name="AIF2Master" />
         <ctl name="RCV Switch" value="1" />
         <ctl name="EPOUT Digital Volume" value="108" />
         <ctl name="EPOUT Input 1 Volume" value="32" />
@@ -227,13 +230,15 @@
 
     <path name="speaker">
         <path name="verb-normal" />
+        <path name="AIF2Master" />
         <ctl name="SPK Switch" value="1" />
         <ctl name="Speaker Digital Volume" value="122" />
         <ctl name="SPKOUTL Input 1 Volume" value="31" />
-        <ctl name="SPKOUTR Input 1 Volume" value="30" />
+        <ctl name="SPKOUTR Input 1 Volume" value="31" />
     </path>
 
     <path name="headphones">
+        <path name="AIF2Master" />
         <path name="channel-left" />
         <path name="verb-normal" />
         <ctl name="Output Compensation Switch" value="1" />
@@ -251,6 +256,7 @@
 
     <path name="bt-sco-headset">
         <path name="verb-normal" />
+        <path name="AIF2Master" />
         <ctl name="ASRC1L Input" value="AIF1RX1" />
         <ctl name="ASRC1R Input" value="AIF1RX2" />
         <ctl name="AIF3TX1 Input 1" value="ASRC1L" />
@@ -281,7 +287,7 @@
         <ctl name="Speaker Digital Volume" value="128" />
         <ctl name="SPKOUTL Input 1 Volume" value="32" />
         <ctl name="SPKOUTR Input 1 Volume" value="32" />
-        <ctl name="SPKOUTL Input 3 Volume" value="30" />
+        <ctl name="SPKOUTL Input 3 Volume" value="32" />
         <ctl name="SPKOUTR Input 3 Volume" value="32" />
     </path>
 
@@ -317,6 +323,7 @@
 
     <path name="hdmi">
         <path name="verb-normal" />
+        <path name="AIF2Master" />
         <ctl name="HDMI Switch" value="1" />
     </path>
 
